@@ -1,11 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+<<<<<<< HEAD
   name: nginx-deployment
+=======
+  name: python-hello
+>>>>>>> 5c2126327313ae3e7bd4423f1cd465da31e3583f
 spec:
   replicas: 1
   selector:
     matchLabels:
+<<<<<<< HEAD
       app: nginx
   template:
     metadata:
@@ -22,3 +27,18 @@ spec:
       - name: html-volume
         configMap:
           name: html-config
+=======
+      app: python-hello
+  template:
+    metadata:
+      labels:
+        app: python-hello
+    spec:
+      containers:
+      - name: python-hello
+        image: python-hello:v1
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+
+>>>>>>> 5c2126327313ae3e7bd4423f1cd465da31e3583f
